@@ -17,7 +17,7 @@ sudo timedatectl set-timezone Asia/Seoul
 ## User Add
 sudo groupadd --gid 1001 sysadm 
 sudo useradd --uid 1001 --gid 1001 sysadm 
-echo "sysadm:Megazone123!" | chpasswd
+echo "sysadm:000000" | chpasswd
 # nsap sysadm UID 1001 GID 1001
 # sap sysadm UID 1001 GID 100
 
