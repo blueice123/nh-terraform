@@ -1,16 +1,35 @@
 # Jenkins 설치 및 Terraform 연동 방법
 
-arn:aws:iam::239234376445:role/ec2-admin > arn:aws:iam::239234376445:role/mzc_solutions_architect
-                                         > arn:aws:iam::333003622053:role/mzc_solutions_architect
+### 배포 권한 부여 
+1. Ec2 Role
+ - AWS sts, DynamoDB(Lock table), S3(State file) 권한만 존재하는 최소 권한으루 부여할 것. 
+ - `arn:aws:iam::333003622053:role/mzc_solutions_architect` 처럼 assume으로 구성하고 Condition에는 EC2 Role만 포함할것 
 
 
-# Jenkins 초기 패스워드 확인
-# [root@ip-172-31-10-222 ~]# docker exec -it 7580a647e862 /bin/bash  # Jenkins container 내부로 접근 
-# jenkins@7580a647e862:/$ cat /var/jenkins_home/secrets/initialAdminPassword  # 패스워드 확인
 
+### Jenkins 구성 
+ - 기타 내용은 스크립트 참조할 것
+
+![image](./images/1.png)
+### Jenkins 초기 패스워드 확인
+#### [root@ip-172-31-10-222 ~]# docker exec -it 7580a647e862 /bin/bash  # Jenkins container 내부로 접근 
+#### jenkins@7580a647e862:/$ cat /var/jenkins_home/secrets/initialAdminPassword  # 패스워드 확인
+```bash
 55c7cbf29a30459aa075d3dbd20a33ab
+```
 
-https://spacelift.io/blog/terraform-jenkins
+
+![image](./images/2.png)
+![image](./images/3.png)
+![image](./images/4.png)
+![image](./images/5.png)
+![image](./images/6.png)
+![image](./images/7.png)
+![image](./images/8.png)
+![image](./images/9.png)
+![image](./images/10.png)
+![image](./images/11.png)
+
 
 6-7 사이 
 plugin 설치하면 재기동되는데 이때 컨테이너가 중지됨
@@ -123,3 +142,5 @@ pipeline {
     }
 }
 ```
+
+https://spacelift.io/blog/terraform-jenkins
