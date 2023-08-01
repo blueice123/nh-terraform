@@ -22,28 +22,10 @@ variable "aws_account" {
     }
 }
 
-## Logs 저장소 환경 변수 
-variable "s3_vpc_flow_logs" {
-    type = map(string)
-    default = {
-        name                              = "nh-flow-logs-230728"
-        expire_days                       = "1825"
-        transition_to_INTELLIGENT_TIERING = "29"
-    }
+variable "project_code" {  
+    default = "nh"
 }
-variable "s3_cloudtrail_logs" {
-    type = map(string)
-    default = {
-        name                              = "nh-trail-logs-230728"
-        expire_days                       = "1825"
-        transition_to_INTELLIGENT_TIERING = "29"
-    }
-}
-variable "s3_alb_access_logs" {
-    type = map(string)
-    default = {
-        name                              = "nh-alb-logs-230728"
-        expire_days                       = "1825"
-        transition_to_INTELLIGENT_TIERING = "29"
-    }
+
+variable "key_pair" {
+    default = "seoul-ekgu-key"
 }

@@ -1,13 +1,13 @@
 module "service_vpc" {
   source = "../../00.Modules/vpc/"
 
-  name = "nh-srv-vpc"
-  cidr = "192.168.0.0/16"
+  name = "nh-svc-vpc"
+  cidr = "192.168.0.0/24"
 
   azs                  = ["ap-northeast-2a", "ap-northeast-2b", "ap-northeast-2c"]
-  loadbalancer_subnets = ["192.168.0.0/26", "192.168.0.64/26", "192.168.0.128/26"]
-  private_subnets      = ["192.168.1.0/24", "192.168.2.0/24", "192.168.3.0/24"]
-  endpoint_subnets     = ["192.168.5.0/28", "192.168.5.16/28", "192.168.5.32/28"]
+  loadbalancer_subnets = ["192.168.0.0/28", "192.168.0.16/28", "192.168.0.32/28"]
+  private_subnets      = ["192.168.0.48/28", "192.168.0.64/28", "192.168.0.80/28"]
+  endpoint_subnets     = ["192.168.0.96/28", "192.168.0.112/28", "192.168.0.128/28"]
 
   # NAT G/W 설정, 모든 zone에 구성 
   enable_nat_gateway = false

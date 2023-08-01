@@ -18,10 +18,3 @@ output "s3_cloudtrail_arn" {
   value       = aws_s3_bucket.cloudtrail.arn
 }
 
-output "s3_alb_access" {
-  value       = aws_s3_bucket.alb.id
-}
-output "s3_alb_access_arn" {
-  value       = aws_s3_bucket.alb.arn
-}
-

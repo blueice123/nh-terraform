@@ -133,7 +133,7 @@ variable "tgw_route_table_tags" {
 variable "share_tgw" {
   description = "Whether to share your transit gateway with other accounts"
   type        = bool
-  default     = true
+  default     = false # true
 }
 
 variable "ram_name" {
